@@ -5,10 +5,10 @@ import { connect } from "cloudflare:sockets";
 // Variables
 const rootDomain = "sull.cloud"; // Ganti dengan domain utama kalian
 const serviceName = "gas2"; // Ganti dengan nama workers kalian
-const apiKey = ""; // Ganti dengan Global API key kalian (https://dash.cloudflare.com/profile/api-tokens)
-const apiEmail = ""; // Ganti dengan email yang kalian gunakan
-const accountID = ""; // Ganti dengan Account ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
-const zoneID = ""; // Ganti dengan Zone ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
+const apiKey = "lTji2H4opZTf8oNnha19CeMHYUL3JQ1tjokQvyNO"; // Ganti dengan Global API key kalian (https://dash.cloudflare.com/profile/api-tokens)
+const apiEmail = "sultanml073@gmail.com"; // Ganti dengan email yang kalian gunakan
+const accountID = "de84b1efa0a9516060d906e96730de49"; // Ganti dengan Account ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
+const zoneID = "9ad486c642d89a7ed0a1d3258c2748cc"; // Ganti dengan Zone ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
 let isApiReady = false;
 let proxyIP = "";
 let cachedProxyList = [];
