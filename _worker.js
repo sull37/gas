@@ -1,14 +1,14 @@
 import { connect } from "cloudflare:sockets";
-// import { createHash, createDecipheriv } from "node:crypto";
-// import { Buffer } from "node:buffer";
+import { createHash, createDecipheriv } from "node:crypto";
+import { Buffer } from "node:buffer";
 
 // Variables
-const rootDomain = "foolvpn.me"; // Ganti dengan domain utama kalian
-const serviceName = "nautica"; // Ganti dengan nama workers kalian
-const apiKey = ""; // Ganti dengan Global API key kalian (https://dash.cloudflare.com/profile/api-tokens)
-const apiEmail = ""; // Ganti dengan email yang kalian gunakan
-const accountID = ""; // Ganti dengan Account ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
-const zoneID = ""; // Ganti dengan Zone ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
+const rootDomain = "sull.biz.id"; // Ganti dengan domain utama kalian
+const serviceName = "xray"; // Ganti dengan nama workers kalian
+const apiKey = "LXmuMjaW6TfxJ3wtgLYPkzl_cnEt3yL0lg6LOyrE"; // Ganti dengan Global API key kalian (https://dash.cloudflare.com/profile/api-tokens)
+const apiEmail = "sultanmluthfi073@gmail.com"; // Ganti dengan email yang kalian gunakan
+const accountID = "d764b4cc43ed0fecb56ff4a2c1285c90"; // Ganti dengan Account ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
+const zoneID = "0b7beb25137ca4a4e953d33d13916b86"; // Ganti dengan Zone ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
 let isApiReady = false;
 let proxyIP = "";
 let cachedProxyList = [];
@@ -853,38 +853,38 @@ function parseNajortHeader(buffer) {
   };
 }
 
-// function parseSsemvHeader(buffer) {
-//   const date = new Date(new Date().toLocaleString("en", { timeZone: "Asia/Jakarta" }));
-//   console.log(`Date: ${date}`);
-//   console.log(`First 16 bytes: ${arrayBufferToHex(buffer.slice(0, 17))}`);
-//   console.log(`Remaining bytes: ${arrayBufferToHex(buffer.slice(17))}`);
+  function parseSsemvHeader(buffer) {
+  const date = new Date(new Date().toLocaleString("en", { timeZone: "Asia/Jakarta" }));
+  console.log(`Date: ${date}`);
+  console.log(`First 16 bytes: ${arrayBufferToHex(buffer.slice(0, 17))}`);
+  console.log(`Remaining bytes: ${arrayBufferToHex(buffer.slice(17))}`);
 
-//   // ===== KEY GENERATION =====
-//   const userId = "3b670322-6ac1-41ec-9ff3-714245d41bf7";
-//   const uuidConst = "c48619fe-8f02-49e0-b9e9-edf763e17e21";
+     // ===== KEY GENERATION =====
+  const userId = "de4e2573-4eb6-4950-a83b-601de8abecf7";
+  const uuidConst = "64fe5189-1465-4d9e-ba1f-6364803b0525";
 
-//   // Step 1: Generate AES key
-//   const key = createHash("md5")
-//     .update(userId + uuidConst)
-//     .digest();
-//   console.log(`KEY: ${key}`);
+      // Step 1: Generate AES key
+  const key = createHash("md5")
+    .update(userId + uuidConst)
+    .digest();
+  console.log(`KEY: ${key}`);
 
-//   // Step 2: Generate Timestamp (current Unix time)
-//   const timestamp = Math.floor(date.getTime() / 1000); // current timestamp in seconds
+   // Step 2: Generate Timestamp (current Unix time)
+  const timestamp = Math.floor(date.getTime() / 1000); // current timestamp in seconds
 
-//   // Step 3: Generate IV from Timestamp
-//   const x = Buffer.alloc(8);
-//   x.writeBigUInt64BE(BigInt(timestamp)); // 8-byte timestamp (Big Endian)
-//   const iv_source = Buffer.concat([x, x, x, x]);
-//   const iv = createHash("md5").update(iv_source).digest();
-//   console.log(`IV: ${iv}`);
+   // Step 3: Generate IV from Timestamp
+  const x = Buffer.alloc(8);
+  x.writeBigUInt64BE(BigInt(timestamp)); // 8-byte timestamp (Big Endian)
+  const iv_source = Buffer.concat([x, x, x, x]);
+  const iv = createHash("md5").update(iv_source).digest();
+  console.log(`IV: ${iv}`);
 
-//   // Step 4: Decrypt using AES-128-CFB
-//   const decipher = createDecipheriv("aes-128-cfb", key, iv);
-//   const decrypted = Buffer.concat([decipher.update(buffer.slice(17)), decipher.final()]);
+   // Step 4: Decrypt using AES-128-CFB
+  const decipher = createDecipheriv("aes-128-cfb", key, iv);
+  const decrypted = Buffer.concat([decipher.update(buffer.slice(17)), decipher.final()]);
 
-//   console.log(`Decrypted Header: ${decrypted.toString("hex")}`);
-// }
+  console.log(`Decrypted Header: ${decrypted.toString("hex")}`);
+ }
 
 async function remoteSocketToWS(remoteSocket, webSocket, responseHeader, retry, log) {
   let header = responseHeader;
