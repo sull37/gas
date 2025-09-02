@@ -4,7 +4,7 @@ import { Buffer } from "node:buffer";
 
 // Variables
 const rootDomain = "sull.biz.id"; // Ganti dengan domain utama kalian
-const serviceName = "xray"; // Ganti dengan nama workers kalian
+const serviceName = "zo"; // Ganti dengan nama workers kalian
 const apiKey = "LXmuMjaW6TfxJ3wtgLYPkzl_cnEt3yL0lg6LOyrE"; // Ganti dengan Global API key kalian (https://dash.cloudflare.com/profile/api-tokens)
 const apiEmail = "sultanmluthfi073@gmail.com"; // Ganti dengan email yang kalian gunakan
 const accountID = "d764b4cc43ed0fecb56ff4a2c1285c90"; // Ganti dengan Account ID kalian (https://dash.cloudflare.com -> Klik domain yang kalian gunakan)
